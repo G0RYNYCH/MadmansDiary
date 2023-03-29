@@ -1,1 +1,28 @@
+  you should handle faults that might take variable amount of time to recover from, as might happen when calling a remote service or resource.
+	Handling this type of faults increasing and improve the stability and resilience of an application.
+				
+1. What we use it for
 
+Polly library is a recommended approach for retries with exponential backoff. It provides resilience and transient-fault handling capabilities.
+You can implement these capabilities by applying Polly policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation and Fallback.
+	Retry - configures automatic retries due to an exception or an unexpected or bad result returned from the called code. Acceptable and appropriate and suitable when recourse or requested service has many transient faults and may self-correct after a short time.
+	Circuit Breaker - blocks execution for a period when faults exceed some pre-configured threshold.
+	Timeout - beyond a certain wait, a success result is unlikely.
+	Bulkhead Isolation - its a strategy when its possible to limit the consumption of resources. 
+	Fallback - you need to plan what you will do when things fail. Defines an alternative(default) value/action to be returned/executed on failure.
+	...
+	
+
+2. What are the advantages
+
+to see the advantages of Polly library lets brush up its capabilities.
+Polly can retry failed requests, cache previous responses, protect you from making requests to broken service, protect your resources, return default value when all else fails.
+its also thread safe and contains both sync and async methods.
+its easy to configure with only a few lines of code.
+
+
+3. How to implement
+
+as for http requests the recommended approach is to take advantage of proven Polly library and its native integration with IHttpClientFactory.
+the implementation is pretty plain namely AddPolicyHandler methods and provide them within policies to use.
+to have more modular approach these policies can be defined in a separate method at the end of StartUp.cs file or as an extention method.
