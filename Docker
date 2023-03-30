@@ -1,0 +1,55 @@
+1. Advantages of using Docker
+By using docker you  can package your software with its all dependencies in smth called container.
+A great thing about Docker is that it allows you to separate applications from infrastructure that equals more freedom.
+Docker is simplify the process of building, running and maintaining applications.
+Docker in virtualizing the operating system of the computer it running at giving it enormous flexibility when it comes to its underlying operating system.
+
+2. The main components of Docker(Dockerfile, Daemon, Images, Client, Container, Registry, Docker Hub, Docker Desktop, Docker volumes)
+Dockerfile - file that holds everything needed to create and run the image including instructions and files location.
+Daemon - 
+Images - set of instructions (a template) for creating containers. Moreover with docker image you can execute some particular code inside docker container. 
+Container - The primary goal of container technology has been to address the weaknesses of virtual machines. Essentially, containers are lightweight versions of virtual machines (VMs). When running an environment with containers you can free up a lot of resources because they all share their host’s operating system. A normal Virtual Machine would require you to install a dedicated operating system on the machine taking up more resources than necessary.
+Registry - 
+Docker Hub - a storage with ready-made and off-the-shelf images.
+Docker Desktop - 
+Docker Volumes - 
+Docker Stack - enables multiple containers to be orchestrated across multiple machines. Docker Stack is running across Docker Swarm. In addition you can describe multiple services within one single file, therefore there is no need to create multiple scripts and handling services.
+Docker Machine - by using docker machines we can create remote machines and deploy docker containers at them.
+Docker Engine - its the one including daemon and CLI (command line interface)
+
+4. Docker Compose
+With docker-compose you get a tool for defining and running multi-container docker applications.
+By creating a configuration file with YAML we can configure our applications services.
+And with a single commend in a console you can create and start all services from configuration file.
+
+5. Basic commands when using Docker
+docker-compose up: starts all services
+docker-compose down: stops all services
+docker build: builds an image from a Dockerfile.
+docker ps: list of running containers
+docker ps -a: list of all containers
+docker version: finds the installed version of Docker
+docker pull: pulls a specific image from Docker Hub
+docker run: creates a container from an image
+
+6. How the Docker image works
+Docker image is a readonly template that contains set of instructions for creating a container that can be run within docker ecosystem, providing convenient way to package up your code with its dependencies
+Its suitable for your private use or you can share images with other docker users.
+Docker image is made up of a collection of files bundled together with all essentials - such as installations, application code, dependencies - required to configure fully operational container environment.
+Now the cool thing is, if you have already build the docker Image before, any consecutive builds to that docker Image will be much faster.
+that's because Docker caches the steps that form a stack of layers.
+Instead of running all commands every time you re-build an image.
+Docker detects what was the first step that changed, and then it only performs steps after the last change.
+Namely it rebuilds consequent layers from the one that changed.
+
+7. Creating a Docker Image
+You can create a docker image by using 2 methods:
+* Interactive - by running a container, save its state as a new image.
+* Dockerfile - by constructing a plain-text file, which provides specifications for crating docker image.
+
+8. Superficially about orchestration In Docker (Docker Swarm, Kubernetes)
+Docker Swarm is a way to manage multiple containers across different machines. Its basically an orchestration tool.
+With Docker Swarm you can transform multiple docker hosts into one docker host which is very powerful as then you get more resources for your containers.
+So Docker Swarm is a group of either physical or virtual machines that running a docker application and that configured to join together in a cluster.
+that machines are referred to as nodes and they are managed by a swarm manager.
+Docker Swarm is Docker's own native clustering solution for Docker containers, which has an advantage of being tightly integrated into Docker ecosystem and uses its own API.
