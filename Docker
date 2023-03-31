@@ -53,3 +53,47 @@ With Docker Swarm you can transform multiple docker hosts into one docker host w
 So Docker Swarm is a group of either physical or virtual machines that running a docker application and that configured to join together in a cluster.
 that machines are referred to as nodes and they are managed by a swarm manager.
 Docker Swarm is Docker's own native clustering solution for Docker containers, which has an advantage of being tightly integrated into Docker ecosystem and uses its own API.
+
+
+
+
+
+18. Dapper
+        
+  FluentMigartor
+https://dotnetcorecentral.com/blog/fluentmigrator/
+https://github.com/giorgos07/Daarto/blob/master/src/AspNetCore.Identity.Dapper/Tables/UsersTable.cs
+https://github.com/simonfaltum/AspNetCore.Identity.Dapper
+
+1. What is the difference between Dapper and Entity Framework (pros/cons)
+Everybody's got their dues in life to pay and object relational mapping systems are not an exception
+convenience and performance are mutually exclusive I bet
+
+Dapper:
+ + 
+works with every database provider
+allows you to write parameterized queries
+converts the result into objects easily
+very efficient with high performance
+ -
+cannot generate model classes
+cannot track objects and its states with changes related to them
+
+EF:
+ +
+allows manipulate and affect a database via C# code
+has ability to track object states and changes related to them
+common syntax LINQ is used to write queries which is easy to use and implement
+also reduces the development time and programmers' effort
+ -
+queries are only controlled by a provider
+weak efficiency compared to Dapper
+with code first approach any manual changes to the database, needs to be updated or copied to the code level because the changes will be lost.
+
+2. When is it better to use Dapper
+Dapper is a good choice for applications that require high performance and efficiency.
+Dapper is also a good choice for applications that need to work with older versions of SQL Server or other databases.
+Dapper is also a good choice for applications that require more control over the SQL that is generated.
+
+3. Calling an SQL query from Dapper
+You need to provide Execute, Query methods or its async versions with SQL statement and optionally parameters, and after that Dapper will automatically map resulting columns to corresponding properties of your model type.
